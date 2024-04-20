@@ -16,7 +16,7 @@ class textgen {
     // префикс-суффиксы
     std::map<prefix, std::vector<std::string> > statetab;
 
-    void memorization(std::string& input_text, int npref);
+    void memorization(const std::string& input_text, int npref);
     std::string generate__text(int maxgen, int npref);
     std::string generate_text(int maxgen, int npref, int seed);
 
