@@ -54,7 +54,7 @@ TEST(Test4, Choosing_a_suffix) {
     int maxgen = 14;
 
     Markov_Chain.memorization(text, npref);
-    std::string result = Markov_Chain.generate_text(maxgen, npref, 306);
+    std::string result = Markov_Chain.generate_text(maxgen, npref, 302);
 
     for (int i = 0; i < 2; i++)
     {
@@ -80,7 +80,7 @@ TEST(Test5, Manual_table) {
     int maxgen = 14;
 
     Markov_Chain.Manual_Table(stateTable);
-    std::string result = Markov_Chain.generate_text(maxgen, npref, 306);
+    std::string result = Markov_Chain.generate_text(maxgen, npref, 302);
 
     for (int i = 0; i < 2; i++)
     {
