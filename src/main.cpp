@@ -11,7 +11,7 @@ const int MAXGEN = 1000;
 std::string Read_and_show_old_text(const std::string& file_name) {
     std::ifstream file(file_name);
     std::string str;
-    std::string out_text1 ;
+    std::string out_text1;
     while (std::getline(file, str)) {
         std::string g = str;
         if (g.size() == 0) {
