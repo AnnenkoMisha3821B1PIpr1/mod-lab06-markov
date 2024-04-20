@@ -8,31 +8,26 @@ const int NPREF = 2;
 //объем текста на выходе
 const int MAXGEN = 1000;
 
-void Read_and_show_old_text(std::string& File_contents) {
-    std::ifstream file("text.txt");
+std::string Read_and_show_old_text(const std::string& file_name) {
+    std::ifstream file(file_name);
     std::string str;
-    while (std::getline(file, str))
-    {
+    std::string out_text1 ;
+    while (std::getline(file, str)) {
         std::string g = str;
         if (g.size() == 0) {
             str += " ";
         }
-        File_contents += str;
+        out_text1 += str;
     }
     file.close();
+    return out_text1;
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "");
-
     textgen Markov_Chain;
-
-    std::string file_contents;
-
-    Read_and_show_old_text(file_contents);
-    
+    std::string File_name = "text.txt";
+    std::string file_contents = Read_and_show_old_text(File_name);
     Markov_Chain.memorization(file_contents, NPREF);
-
     std::cout << Markov_Chain.generate__text(MAXGEN, NPREF);
 }
