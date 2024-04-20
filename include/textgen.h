@@ -11,19 +11,19 @@
 
 class textgen {
 public:
-	// очередь префиксов
-	typedef std::deque<std::string> prefix;
-	// префикс-суффиксы
-	std::map<prefix, std::vector<std::string> > statetab;
+    // очередь префиксов
+    typedef std::deque<std::string> prefix;
+    // префикс-суффиксы
+    std::map<prefix, std::vector<std::string> > statetab;
 
-	void memorization(std::string& input_text, int npref);
-	std::string generate__text(int maxgen, int npref);
-	std::string generate_text(int maxgen, int npref, int seed);
+    void memorization(std::string& input_text, int npref);
+    std::string generate__text(int maxgen, int npref);
+    std::string generate_text(int maxgen, int npref, int seed);
 
-	void Manual_Table(
-		const std::map<prefix,
-		std::vector<std::string>>& state);
+    void Manual_Table(
+        const std::map<prefix,
+    	std::vector<std::string>>& state);
 private:
-	prefix FirstPref;
-	std::vector<std::string> Split(const std::string& str);
+    prefix FirstPref;
+    std::vector<std::string> Split(const std::string& str);
 };
