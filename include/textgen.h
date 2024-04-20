@@ -10,7 +10,7 @@
 #include <cstdlib>
 
 class textgen {
-public:
+ public:
     // очередь префиксов
     typedef std::deque<std::string> prefix;
     // префикс-суффиксы
@@ -22,8 +22,8 @@ public:
 
     void Manual_Table(
         const std::map<prefix,
-    	std::vector<std::string>>& state);
-private:
+    std::vector<std::string>>& state);
+ private:
     prefix FirstPref;
     std::vector<std::string> Split(const std::string& str);
 };
