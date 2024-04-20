@@ -8,7 +8,6 @@ const int NPREF = 2;
 //объем текста на выходе
 const int MAXGEN = 1000;
 
-
 void Read_and_show_old_text(std::string& File_contents) {
     std::ifstream file("text.txt");
     std::string str;
