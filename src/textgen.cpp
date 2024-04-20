@@ -44,9 +44,8 @@ void textgen::memorization(const std::string& input_text, int npref) {
     }
 }
 
-std::string textgen::generate__text(int maxgen, int npref)
-{
-    return generate_text(maxgen, npref, 
+std::string textgen::generate__text(int maxgen, int npref) {
+    return generate_text(maxgen, npref,
         std::default_random_engine::default_seed);
 }
 
@@ -57,7 +56,6 @@ std::string textgen::generate_text(int maxgen, int npref, int seed) {
     } else if (FirstPref.empty()) {
         return "EMPTY FirstPref";
     }
-    
     std::default_random_engine _random_(seed);
     prefix Prefix = FirstPref;
     std::string output_text;
@@ -67,17 +65,13 @@ std::string textgen::generate_text(int maxgen, int npref, int seed) {
         output_text += FirstPref[k] + " ";
         k++;
     }
-    
     while (output_text.size() < maxgen) {
         if (statetab.find(Prefix) != statetab.end()) {
-            
-            const std::vector<std::string>& suffixes_in_Prefix 
+            const std::vector<std::string>& suffixes_in_Prefix
                 = statetab[Prefix];
-            
             if (suffixes_in_Prefix.empty()) {
                 break;
             } else if (!suffixes_in_Prefix.empty()) {
-
                 std::uniform_int_distribution<>
                     dist(0, statetab[Prefix].size() - 1);
                 int Index_Rand = dist(_random_);
@@ -113,7 +107,7 @@ std::string textgen::generate_text(int maxgen, int npref, int seed) {
 }
 
 void textgen::Manual_Table(
-    const std::map<prefix, 
+    const std::map<prefix,
     std::vector<std::string>>& state) {
 
     statetab = state;
