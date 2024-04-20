@@ -21,7 +21,7 @@ std::vector<std::string> textgen::Split(const std::string& str) {
 
 //npref - количество слов в префиксе
 //input_text - входной текст
-void textgen::memorization(std::string& input_text, int npref) {
+void textgen::memorization(const std::string& input_text, int npref) {
 	std::string copy_text = input_text;
 	std::vector<std::string> words = Split(copy_text);
 	// Заполнение начального префикса
