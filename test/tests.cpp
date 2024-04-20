@@ -2,8 +2,6 @@
 #include <gtest/gtest.h>
 #include "../include/textgen.h"
 
-//#include "C:\Users\wizze\source\repos\mod-lab06-markov\lab06-markov\lab06-markov\textgen.cpp"
-
 TEST(Test1, Prefix_formation) {
     textgen Markov_Chain;
     std::string input_text = "The cat lay down";
@@ -31,14 +29,12 @@ TEST(Test2, Record_formation) {
 TEST(Test3, A_single_suffix) {
     textgen Markov_Chain;
     std::string text = "The cat lay down";
-    
     int npref = 2;
     int maxgen = 11;
     Markov_Chain.memorization(text, npref);
 
     std::string result = Markov_Chain.generate__text(maxgen, npref);
-    for (int i = 0; i < 2; i++)
-    {
+    for (int i = 0; i < 2; i++) {
         result.pop_back();
     }
     std::string requiredLine = "The cat lay";
@@ -56,8 +52,7 @@ TEST(Test4, Choosing_a_suffix) {
     Markov_Chain.memorization(text, npref);
     std::string result = Markov_Chain.generate_text(maxgen, npref, 302);
 
-    for (int i = 0; i < 2; i++)
-    {
+    for (int i = 0; i < 2; i++) {
         result.pop_back();
     }
     std::string requiredLine = "The cat is nervous";
@@ -82,8 +77,7 @@ TEST(Test5, Manual_table) {
     Markov_Chain.Manual_Table(stateTable);
     std::string result = Markov_Chain.generate_text(maxgen, npref, 302);
 
-    for (int i = 0; i < 2; i++)
-    {
+    for (int i = 0; i < 2; i++) {
         result.pop_back();
     }
     std::string requiredLine = "The cat is nervous";
